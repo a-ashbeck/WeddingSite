@@ -1,16 +1,37 @@
 {
-  "devDependencies": {
-    "gulp": "latest",
-    "gulp-sass": "latest",
-    "gulp-uglify": "latest",
-    "gulp-rename": "latest",
-    "gulp-notify": "latest",
-    "gulp-minify-css": "latest",
-    "gulp-concat": "latest",
-    "gulp-plumber": "latest",
-    "browser-sync": "latest",
-    "gulp-sourcemaps": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-clean-css": "latest"
-  }
+    "name": "WeddingSite",
+    "version": "1.0.0",
+    "description": "Wedding website for Alan and Marlena",
+    "author": "Alan W. Ashbeck",
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+    },
+    "homepage": "https://github.com/a-ashbeck/WeddingSite#readme",
+    "devDependencies": {
+        "bootstrap": "^3.3.7",
+        "browser-sync": "^2.13.0",
+        "font-awesome": "^4.6.3",
+        "gulp-header": "^1.8.7",
+        "gulp-less": "^4.0.1",
+        "jquery": "^3.3.1",
+        "magnific-popup": "^1.1.0",
+        "scrollreveal": "^3.1.4",
+        "gulp": "latest",
+        "gulp-sass": "latest",
+        "gulp-uglify": "latest",
+        "gulp-rename": "latest",
+        "gulp-notify": "latest",
+        "gulp-minify-css": "latest",
+        "gulp-concat": "latest",
+        "gulp-plumber": "latest",
+        "browser-sync": "latest",
+        "gulp-sourcemaps": "latest",
+        "gulp-autoprefixer": "latest",
+        "gulp-clean-css": "latest"
+    },
+    "dependencies": {
+        "express": "^4.15.2",
+        "heroku": "^7.19.4"
+    }
 }
