@@ -554,8 +554,8 @@ a:hover {
 
 @media screen and (max-width:768px) {
     .text-intro-wrap .text-intro h1 {
-        font-size: 85px;
-        line-height: 75px
+        font-size: 3em;
+        line-height: 1;
     }
     .probootstrap-groom-bride {
         margin-top: 0
