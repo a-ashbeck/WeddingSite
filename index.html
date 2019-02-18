@@ -253,23 +253,39 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="probootstrap-card probootstrap-animate">
-                        <form class="probootstrap-form">
+                        <form class="probootstrap-form" name="submit-to-google-sheet">
                             <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <label for="name">Your Name(s)</label>
+                                <input name="name" type="text" class="form-control" id="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Your Email</label>
-                                <input type="text" class="form-control" id="email">
+                                <input name="email" type="email" class="form-control" id="email" required>
                             </div>
                             <div class="form-group">
                                 <p>Will you attend?</p>
-                                <label for="yes"><input type="checkbox" id="yes"> Yes, I will be there</label> <br>
-                                <label for="no"><input type="checkbox" id="no"> Sorry, I can't come</label> <br>
+                                <label for="yes"><input type="radio" id="yes" name="attending"> Yes, I will be there</label> <br>
+                                <label for="no"><input type="radio" id="no" name="attending"> Sorry, I can't come</label> <br>
                             </div>
+                            <!-- <div class="form-group">
+                                <p>Will you attend?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" name="attending" id="yes" value="yes">
+                                    <label class="form-check-label" for="yes">
+                                        <strong>Yes</strong>, I will be attending!
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" name="attending" id="no" value="no">
+                                    <label class="form-check-label" for="no">
+                                        <strong>No</strong>, Sorry! Maybe some other time.
+                                    </label>
+                                </div>
+                            </div> -->
+
                             <div class="form-group">
-                                <label for="note">Note</label>
-                                <textarea name="" id="note" cols="20" rows="5" class="form-control"></textarea>
+                                <label for="note">Note (optional)</label>
+                                <textarea name="" id="note" cols="20" rows="5" class="form-control" name="notes"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-lg" value="Send RSVP">
@@ -316,6 +332,24 @@
 
     <script src="js/scripts.min.js"></script>
     <script src="js/custom.min.js"></script>
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyq81dbktfW4_r6ofY6ZWLTVF4E3SCfLGoSllSYLY0ZG27GuyM/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message));
+            console.log()
+        })
+    </script>
 
     <!-- Google Map -->
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHfW-_kyB1LP4UcaQ1DhWDrdt0YKFbCEo&sensor=false&libraries=places"></script> -->
