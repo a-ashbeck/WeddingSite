@@ -9,7 +9,7 @@
     },
     "homepage": "https://github.com/a-ashbeck/WeddingSite#readme",
     "devDependencies": {
-        "bootstrap": "^3.3.7",
+        "bootstrap": "^3.4.1",
         "browser-sync": "latest",
         "font-awesome": "^4.6.3",
         "gulp": "^4.0.0",
@@ -23,7 +23,7 @@
         "gulp-plumber": "latest",
         "gulp-rename": "latest",
         "gulp-sass": "latest",
-        "gulp-sourcemaps": "latest",
+        "gulp-sourcemaps": "^2.6.5",
         "gulp-uglify": "latest",
         "jquery": "^3.3.1",
         "magnific-popup": "^1.1.0",
@@ -31,6 +31,6 @@
     },
     "dependencies": {
         "express": "^4.15.2",
-        "heroku": "^7.19.4"
+        "heroku": "^7.21.0"
     }
 }
